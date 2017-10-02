@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('front/home');
 });
 
-Route::get('/admin', function () {
+
+// RUTAS ADMIN
+Route::get('/'.env('APP_URL_FOLDER').'/', function () {
 	return view('back/home');
+});
+
+Route::get('/'.env('APP_URL_FOLDER').'/edit-post/{id_post}/', function ($id_post) {	
+	echo "EDITANDO POST: ".$id_post."<br/>";
+
+	// return view('back/home');
 });
